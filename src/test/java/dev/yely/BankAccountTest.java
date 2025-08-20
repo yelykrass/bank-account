@@ -67,11 +67,11 @@ public class BankAccountTest {
     }
 
     @Test
-    void testWithdrawal() {
+    void testWithdraw() {
         int amount = 500;
         float expected = 3500f;
 
-        account.withdrawal(amount);
+        account.withdraw(amount);
 
         float result = account.getBalance();
 

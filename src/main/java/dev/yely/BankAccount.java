@@ -4,7 +4,7 @@ public class BankAccount {
 
     private float balance;
     private int depositCount;
-    private int withdrawalCount;
+    private int withdrawCount;
     private float annualRate;
     private float monthlyFee;
 
@@ -12,7 +12,7 @@ public class BankAccount {
         this.balance = balance;
         this.annualRate = annualRate;
         this.depositCount = 0;
-        this.withdrawalCount = 0;
+        this.withdrawCount = 0;
         this.monthlyFee = 0;
     }
 
@@ -21,15 +21,15 @@ public class BankAccount {
         depositCount++;
     }
 
-    public void withdrawal(float amount) {
+    public void withdraw(float amount) {
         if (amount <= 0) {
-            throw new IllegalArgumentException("Withdrawal amount must be positive");
+            throw new IllegalArgumentException("Withdraw amount must be positive");
         }
         if (balance < amount) {
-            throw new IllegalArgumentException("Insufficient funds for this withdrawal.");
+            throw new IllegalArgumentException("Insufficient funds for this withdraw.");
         }
         balance -= amount;
-        withdrawalCount++;
+        withdrawCount++;
     }
 
     public void calculateMonthlyInterest() {
@@ -47,7 +47,7 @@ public class BankAccount {
 
     public String printInfo() {
         String result = "Balance: %.2f; Deposit: %d; Withdrawal: %d; Annual Rate: %.2f; Monthly Fee: %.2f"
-                .formatted(balance, depositCount, withdrawalCount, annualRate, monthlyFee);
+                .formatted(balance, depositCount, withdrawCount, annualRate, monthlyFee);
         return result;
     }
 
@@ -67,8 +67,8 @@ public class BankAccount {
         return depositCount;
     }
 
-    public int getWithdrawalCount() {
-        return withdrawalCount;
+    public int getWithdrawCount() {
+        return withdrawCount;
     }
 
     public void setMonthlyFee(float monthlyFee) {
