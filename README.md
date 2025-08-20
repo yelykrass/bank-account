@@ -75,8 +75,8 @@ mvn clean install
 
 ```mermaid
 classDiagram
-        Account <|-- SavingAccount
-        Account <|-- CheckingAccount
+        BankAccount <|-- SavingAccount
+        BankAccount <|-- CheckingAccount
 
         class BankAccount {
           -float balance
